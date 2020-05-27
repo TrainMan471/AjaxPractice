@@ -1,35 +1,42 @@
-<h1>Hello World</>
-  <h2>We are testing for git</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="">
+  <title>AJAX with JavaScript</title>
+  <script>
+    var newAjaxRequest = new XMLHttpRequest();
+    newAjaxRequest.onreadystatechange = function() {
 
-<h3 style="color:firebrick"> This is a body of text that should be changed!</h3>
+        if (newAjaxRequest.readyState == 4) {
+          console.log(newAjaxRequest.responseText);
 
+          document.getElementById('ajax').innerHTML = newAjaxRequest.responseText;
+        }
 
-<table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>This is not a trick</td>
-    <td>This is another entry</td>
-    <td>This should be templated!</td>
-  </tr>
-</table>
+    };
+    console.log(newAjaxRequest == 4);
+    newAjaxRequest.open('GET', 'sidebar.html');
+  newAjaxRequest.send();
 
 
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+          </div>
+          <div id="ajax">
 
-<p> Once upon a time, there was a tank engine named Normand who planned
-to rule the world. He was a good fighter. and he beat up this bad masked
-boy named Vanitas. He ran over Vanitas several times with his wheels.
-it was very</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
